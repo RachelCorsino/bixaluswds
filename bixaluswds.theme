@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theme templates.
+ */
+
+require_once dirname(__FILE__) . '/preprocess/global.inc';
