@@ -54,6 +54,6 @@
     <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
   {% endif %}
   {% for item in items %}
-    <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
+    {{ item.content }}
   {% endfor %}
 </div>

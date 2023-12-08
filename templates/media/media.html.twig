@@ -22,9 +22,12 @@
   view_mode ? 'media--view-mode-' ~ view_mode|clean_class,
 ] %}
 
-<div{{ attributes.addClass(classes) }}>
-  {{ title_suffix.contextual_links }}
-  {% if content %}
+{% block content %}
+  <div{{ attributes.addClass(classes) }}>
+
+    {{ title_suffix.contextual_links }}
+
     {{ content }}
-  {% endif %}
-</div>
+
+  </div>
+{% endblock %}

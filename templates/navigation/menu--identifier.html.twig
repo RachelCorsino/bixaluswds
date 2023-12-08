@@ -22,33 +22,14 @@
 #}
 {% import _self as menus %}
 
-{{ menus.menu_links(items, attributes, 0) }}
+<nav class="usa-identifier__section usa-identifier__section--required-links" aria-label="{{ 'Important links' | t }}">
+  <div class="usa-identifier__container">
+    {{ menus.menu_links(items, attributes, 0) }}
+  </div>
+</nav>
 
 {% macro menu_links(items, attributes, menu_level) %}
-  {% import _self as menus %}
-
-  {% if items %}
-    <ul {{ attributes.addClass('usa-identifier__required-links-list') }}>
-      {% for item in items %}
-
-        {% set item_classes = [
-          'usa-identifier__required-links-item',
-          'menu__item',
-          'menu__item--' ~ menu_item_type,
-          item.in_active_trail ? 'menu__item--active-trail',
-        ] %}
-
-        {% set link_classes = [
-          'usa-identifier__required-link usa-link',
-          'menu__link',
-          'menu__link--' ~ menu_item_type,
-          item.in_active_trail ? 'menu__link--active-trail',
-        ] %}
-
-        <li{{ item.attributes.addClass(item_classes) }}>
-          {{ link(item.title, item.url, { 'class': link_classes }) }}
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
+  {% include "@bixaluswds/_components/uswds/usa-identifier--section--required-links.html.twig" with {
+    'items', items
+  } %}
 {% endmacro %}

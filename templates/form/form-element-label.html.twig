@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Theme override for a form element label.
+ * Default theme implementation for a form element label.
  *
  * Available variables:
  * - title: The label's text.
@@ -10,19 +10,19 @@
  * - attributes: A list of HTML attributes for the label.
  *
  * @see template_preprocess_form_element_label()
+ *
+ * @ingroup themeable
  */
 #}
-
-{% set type = element["#form_element_type"] %}
-
-{% set classes = [
-  title_display == 'after' ? 'option',
-  title_display == 'invisible' ? 'visually-hidden',
-  required ? 'js-form-required',
-  required ? 'form-required',
-  type not in ['checkbox', 'radio'] ? 'text-primary-dark text-bold usa-label',
-] %}
-
+{%
+  set classes = [
+    'usa-label',
+    title_display == 'after' ? 'option',
+    title_display == 'invisible' ? 'visually-hidden',
+    required ? 'js-form-required',
+    required ? 'form-required',
+  ]
+%}
 {% if title is not empty or required -%}
   <label{{ attributes.addClass(classes) }}>{{ title }}</label>
 {%- endif %}

@@ -31,20 +31,4 @@
  * http://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
  */
 #}
-{% set classes = [
-  'block',
-  'block--system-menu-block',
-  'usa-nav',
-] %}
-
-<nav role="navigation"
-  {{ attributes.addClass(classes).setAttribute('aria-label', configuration.label)|without('role', 'aria-labelledby') }}>
-
-  {{ title_prefix }}
-  {{ title_suffix }}
-
-  {% block content %}
-    {{ content }}
-  {% endblock %}
-
-</nav>
+{{ content }}

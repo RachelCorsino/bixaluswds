@@ -43,7 +43,29 @@
   {{ attach_library('bixaluswds/logged-in') }}
 {% endif %}
 
-<section class="usa-banner"></section>
+{% set banner_gov_text %}
+  <p>
+    <strong>Official websites use .gov</strong><br />
+    A <strong>.gov</strong> website belongs to an official government organization in the United States.
+  </p>
+{% endset %}
+
+{% set banner_https_text %}
+  <p>
+    <strong>Secure .gov websites use HTTPS</strong><br />
+    A <strong>lock</strong> (<span class=\"icon-lock\">@</span>) or <strong>https://</strong> means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.
+  </p>
+{% endset %}
+
+{% include '@uswds_templates/usa-banner.html.twig' with {
+  'aria_label': 'Official website of the United States government' | t,
+  'header_text': 'An official website of the United States government' | t,
+  'button_text': 'Here’s how you know' | t,
+  'uswds_img_path': uswds_img_path ~ '/',
+  'gov_text': banner_gov_text,
+  'https_text': banner_https_text
+} %}
+
 <div class="usa-overlay"></div>
 <header role="banner" class="usa-header" id="header">
   {{ page.header }}
@@ -74,6 +96,28 @@
   {% endif %}
 {% endblock %}
 
-<footer role="contentinfo" id="footer">
-  {{ page.footer }}
+<footer class="usa-footer" role="contentinfo">
+  {# Footer partial. #}
+  {% include '@bixaluswds/_components/uswds/usa-footer.html.twig' with {
+    'footer_menu': drupal_entity('block', 'footer_menu'),
+    'sitename': drupal_link(site_name, '<front>', { attributes: { 'title': site_name, 'class': 'usa-link' }}),
+    'facebook_url': 'https://facebook.com',
+    'instagram_url': 'https://instagram.com',
+    'twitter_url': 'https://twitter.com',
+    'youtube_url': 'https://youtube.com',
+    'rss_url': '/rss',
+    'contact_sitename': site_name ~ ' ' ~ 'Contact Center'|t,
+    'phone': "(800) 555-5555",
+    'email': "info@agency.gov"
+  } %}
 </footer>
+
+{# Identifier partial. #}
+{% include '@bixaluswds/_components/uswds/usa-identifier.html.twig' with {
+  'domain': 'domain.gov',
+  'agencyname': "General Service Administration" | t,
+  'agency_url': "https://gsa.gov/",
+  'identifier_menu': drupal_entity('block', 'identifier_menu'),
+  'description_link_url': "https://www.usa.gov/",
+  'description_link_text': 'Visit USA.gov' | t,
+} %}

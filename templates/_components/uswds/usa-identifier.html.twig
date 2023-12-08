@@ -7,7 +7,7 @@
  * - domain: string
  * - agencyname: string
  * - agency_url: url string
- * - identifier_menu: renderable array of menu items
+ * - identifier_menu: renderable menu object
  * - description_link_url: url string
  * - description_link_text: url string
  *
@@ -35,7 +35,7 @@
           <a href="{{ agency_url }}" class="usa-identifier__logo">
             <img
               class="usa-identifier__logo-img"
-              src="/{{ directory }}/logo.svg"
+              src="{{ uswds_img_path }}/circle-gray-20.svg"
               alt="{{ agencyname ~ ' logo' | t }}"
               role="img"/>
           </a>
@@ -56,14 +56,7 @@
     </section>
   {% endif %}
 
-  {% if identifier_menu %}
-    <nav class="usa-identifier__section usa-identifier__section--required-links"
-         aria-label="{{ 'Important links'|t }}">
-      <div class="usa-identifier__container grid-container-widescreen">
-        {{ identifier_menu }}
-      </div>
-    </nav>
-  {% endif %}
+  {{ identifier_menu }}
 
   {% if description_link_url and description_link_text %}
     <section

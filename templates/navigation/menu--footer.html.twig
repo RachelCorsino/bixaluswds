@@ -22,36 +22,12 @@
 #}
 {% import _self as menus %}
 
-{% set attributes = attributes.addClass('grid-row grid-gap') %}
-{{ menus.menu_links(items, attributes, 0) }}
+<nav class="usa-footer__nav" aria-label="{{ 'Footer navigation' | t }}">
+  {{ menus.menu_links(items, attributes, 0) }}
+</nav>
 
 {% macro menu_links(items, attributes, menu_level) %}
-  {% import _self as menus %}
-
-  {% if items %}
-    <ul {{ attributes.addClass('menu') }}>
-      {% for item in items %}
-
-        {% set item_classes = [
-          'mobile-lg:grid-col-4',
-          'desktop:grid-col-auto',
-          'usa-footer__primary-content',
-          'menu__item',
-          'menu__item--' ~ menu_item_type,
-          item.in_active_trail ? 'menu__item--active-trail',
-        ] %}
-
-        {% set link_classes = [
-          'usa-footer__primary-link',
-          'menu__link',
-          'menu__link--' ~ menu_item_type,
-          item.in_active_trail ? 'menu__link--active-trail',
-        ] %}
-
-        <li{{ item.attributes.addClass(item_classes) }}>
-          {{ link(item.title, item.url, { 'class': link_classes }) }}
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
+  {% include "@bixaluswds/_components/uswds/usa-footer--nav.html.twig" with {
+    'items': items
+  } %}
 {% endmacro %}
