@@ -1,0 +1,16 @@
+name: Bixal USWDS Theme
+type: theme
+description: "Drupal theme for use with USWDS."
+core_version_requirement: "^9.4 || ^10"
+base theme: bixaluswds
+
+libraries:
+  - starter_theme/base
+
+regions:
+  admin: "Admin"
+  header: "Header"
+  content: "Content"
+  sidebar: "Sidebar"
+  footer: "Footer"
+  no_region: "Blocks for Twig Tweak, hidden, or other purposes"
