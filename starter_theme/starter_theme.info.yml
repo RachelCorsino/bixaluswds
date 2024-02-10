@@ -3,6 +3,9 @@ type: theme
 description: "Drupal theme for use with USWDS."
 core_version_requirement: "^9.4 || ^10"
 base theme: bixaluswds
+starterkit: true
+version: '0.0.0'
+hidden: true
 
 libraries:
   - starter_theme/base
