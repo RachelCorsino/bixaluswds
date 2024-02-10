@@ -14,12 +14,15 @@ Add bixal/bixaluswds to `repositories` object.
         "source": {
             "url": "https://github.com/Bixal/bixaluswds.git",
             "type": "git",
-            "reference": "v0.0.0"
+            "reference": "v0.0.2"
         }
     }
 }
 ```
-Run `lando composer install`
+Then run
+```
+lando composer require "bixal/bixaluswds"
+```
 
 ## Initialize child theme using drupal theme generate function
 Determine what theme name you want to use in this example we are using `my_new_theme`.
