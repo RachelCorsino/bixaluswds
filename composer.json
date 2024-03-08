@@ -12,13 +12,31 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "bixal/bixaluswds",
+                "version": "1.0",
+                "type":"drupal-theme",
+                "source": {
+                    "url": "https://github.com/Bixal/bixaluswds.git",
+                    "type": "git",
+                    "reference": "v0.0.2"
+                }
+            }
         }
     ],
     "require": {
+        "bixal/bixaluswds": "^1.0",
         "composer/installers": "^2.0",
+        "drupal/block_content_template": "^1.5",
         "drupal/core-composer-scaffold": "^10.1",
         "drupal/core-project-message": "^10.1",
         "drupal/core-recommended": "^10.1",
+        "drupal/twig_field_value": "^2.0",
+        "drupal/twig_tweak": "^3.3",
+        "drupal/uswds_templates": "3.0.x-dev@dev",
         "drush/drush": "^12.2"
     },
     "conflict": {

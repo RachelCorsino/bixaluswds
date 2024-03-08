@@ -1,0 +1,15 @@
+name: my_new_theme
+type: theme
+core_version_requirement: ^10
+'base theme': bixaluswds
+version: 0.0.0
+libraries:
+  - my_new_theme/base
+regions:
+  admin: Admin
+  header: Header
+  content: Content
+  sidebar: Sidebar
+  footer: Footer
+  no_region: 'Blocks for Twig Tweak, hidden, or other purposes'
+generator: 'starter_theme:0.0.0'
