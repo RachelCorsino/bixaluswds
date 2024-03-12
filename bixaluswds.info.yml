@@ -20,7 +20,7 @@ regions:
   content: "Content"
   sidebar: "Sidebar"
   footer: "Footer"
-  no_region: "Blocks for Twig Tweak, hidden, or other purposes"
+  no_region: "Blocks for Twig Tweak, hidden, or other purposes."
 
 ## unset any unwanted CSS or JS.
 libraries-override:
