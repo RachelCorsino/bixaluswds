@@ -3,14 +3,14 @@ status: true
 dependencies:
   module:
     - focal_point
-name: square_960x960_
-label: 'Square (960x960)'
+name: banner_960x480_
+label: 'Bixal: Banner (960x480)'
 effects:
-  38ba02eb-a159-4879-9b87-b6008ac27618:
-    uuid: 38ba02eb-a159-4879-9b87-b6008ac27618
+  8169038f-d05b-4690-9982-2181ee2cd32e:
+    uuid: 8169038f-d05b-4690-9982-2181ee2cd32e
     id: focal_point_scale_and_crop
     weight: 1
     data:
       width: 960
-      height: 960
+      height: 480
       crop_type: focal_point

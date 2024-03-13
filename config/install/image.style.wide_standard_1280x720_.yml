@@ -3,14 +3,14 @@ status: true
 dependencies:
   module:
     - focal_point
-name: square_1280x1280_
-label: 'Square (1280x1280)'
+name: wide_standard_1280x720_
+label: 'Bixal: Wide Standard (1280x720)'
 effects:
-  eb889b46-565b-4ae2-ba44-886e461bf29a:
-    uuid: eb889b46-565b-4ae2-ba44-886e461bf29a
+  fb2376c1-c084-41dc-91ef-06e0458ac449:
+    uuid: fb2376c1-c084-41dc-91ef-06e0458ac449
     id: focal_point_scale_and_crop
     weight: 1
     data:
       width: 1280
-      height: 1280
+      height: 720
       crop_type: focal_point
