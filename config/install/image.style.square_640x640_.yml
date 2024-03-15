@@ -3,7 +3,7 @@ status: true
 dependencies:
   module:
     - focal_point
-name: square_1_1_
+name: square_640x640_
 label: 'Bixal: Square (640x640)'
 effects:
   b03ff1df-cb8f-43ee-83cf-8c5b1ea17e2b:

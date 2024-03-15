@@ -1,0 +1,25 @@
+uuid: bcfd013d-7efe-40d1-a282-647c34b3f95f
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.banner_960x480_
+    - image.style.bixal_banner_1280x640_
+    - image.style.bixal_banner_1600x800_
+  theme:
+    - bixaluswds
+id: bixal_banner
+label: 'Bixal: Banner'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: bixal_banner_1600x800_
+    breakpoint_id: bixaluswds.desktop
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: bixal_banner_1280x640_
+    breakpoint_id: bixaluswds.tablet
+    multiplier: 1x
+breakpoint_group: 'Bixal USWDS'
+fallback_image_style: banner_960x480_
